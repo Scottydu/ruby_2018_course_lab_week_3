@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+<% if @user_decorator.show_add_friend_button?(current_user) %>
+  <div class="container">
+    <%= link_to 'Add friend', user_friendships_url(user_id: @user.id), method: :post, class: 'btn btn-lg btn-block btn-outline-primary mt-3' %>
+  </div>
+<% end %>
+<div class="container">
+  <h3> Friends <small>(<%= @user.friends.count %> friends)</h3>
+    <%= render @user.friends %>
+</div>

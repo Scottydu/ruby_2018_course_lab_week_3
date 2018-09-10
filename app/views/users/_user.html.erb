@@ -1,0 +1,9 @@
+<div class="card mb-4 shadow-sm">
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal"><%= user.name %></h4>
+  </div>
+  <div class="card-body">
+    <img src="http://lorempixel.com/300/300" class="rounded mx-auto d-block" alt="">
+    <%= link_to "#{user.name} profile", user, class: 'btn btn-lg btn-block btn-outline-primary mt-3' %>
+  </div>
+</div>

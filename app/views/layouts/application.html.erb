@@ -10,6 +10,37 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <%= link_to 'Facebook clone', root_path, class: 'navbar-brand' %>
+
+      <div class="navbar-collapse" id="Facebook clone">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'Browse users', root_path, class: 'nav-link' %>
+          </li>
+          <% if current_user %>
+            <li class="nav-item">
+              <%= link_to 'Sign out', destroy_user_session_url, method: :delete, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Sign in', new_user_session_url, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign up', new_user_registration_url, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-container container">
+      <% if notice %>
+        <%= content_tag :div, notice, class: "alert alert-primary" %>
+      <% end %>
+      <% if alert %>
+        <%= content_tag :div, alert, class: "alert alert-danger" %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

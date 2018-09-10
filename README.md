@@ -1,4 +1,5 @@
 # README
+## Ruby on rails course week 3 example
 
 1. `rails new . -d=postgresql -T` -T doesn't add any test suite (default test suite for Rails is minitest - which _sucks_)
   * run `rails db:create`
