@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :friendship do
-    requester { nil }
-    receiver { nil }
+    requester { create(:user) }
+    receiver { create(:user) }
     accepted { false }
   end
 end

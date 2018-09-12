@@ -4,7 +4,7 @@
     <%= link_to 'Add friend', user_friendships_url(user_id: @user.id), method: :post, class: 'btn btn-lg btn-block btn-outline-primary mt-3' %>
   </div>
 <% end %>
-<div class="container">
+<div class="container friends-container">
   <h3> Friends <small>(<%= @user.friends.count %> friends)</h3>
     <%= render @user.friends %>
 </div>
